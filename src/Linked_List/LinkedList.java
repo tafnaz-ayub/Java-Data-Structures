@@ -11,7 +11,7 @@ public class LinkedList {
         length = 0;
     }
 
-    private class Node {
+   public class Node {
         int value;
         Node next;
 
