@@ -1,5 +1,4 @@
 package Stack;
-
 public class Stack {
     private Node top;
     private int height;
@@ -49,5 +48,4 @@ public class Stack {
         stack.printStack();
         System.out.println(stack.peek().value);
     }
-
 }

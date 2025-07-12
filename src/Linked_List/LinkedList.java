@@ -51,9 +51,43 @@ public class LinkedList {
             tail = prev;
         }
         length--;
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
         return temp;
     }
-
+    public void prepend(int value){
+        Node newNode = new Node(value);
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            Node temp = head;
+            head = newNode;
+            newNode.next = temp;
+        }
+        length++;
+    }
+    public Node removeFirst(){
+        if(length == 0) return null;
+        Node temp = head;
+        if(length == 1){
+            head = null;
+            tail = null;
+        }
+        else{
+            head = temp.next;
+            temp.next = null;
+        }
+        length--;
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
+        return temp;
+    }
     public void printList(){
         Node temp = head;
         while(temp != null){
@@ -72,6 +106,9 @@ public class LinkedList {
         ll.printList();
         ll.remove();
         ll.remove();
+        ll.prepend(10);
+        ll.printList();
+        ll.removeFirst();
         ll.printList();
     }
 }
